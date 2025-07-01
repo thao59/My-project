@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %} Anime Page{% endblock %}
+
+{% block main %}
+
+<div class="anime-wiki">
+    <img class="anime-wiki-img" src="{{anime['image']}}" alt="anime thumbnail">
+    <h1>{{anime["title"]}}</h1>
+    <p>Type: {{anime["type"]}}</p>
+    <p>Ranking: {{anime["ranking"]}}</p>
+    <p>Genres: {{anime["genres"]| join("")}}</p>
+    <p>Episodes: {{anime["episodes"]}}</p>
+    <a href="{{anime['link']}}">Myanimelist</a>
+    <p>Status: {{anime["status"]}}</p>
+    <p class="synopsis">Synopsis: {{anime["synopsis"]}}</p>
+   
+</div>
+
+
+{% endblock %}

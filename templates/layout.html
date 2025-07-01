@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" href="../static/styles.css">
+
+    <!-- get font from Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+        <title>
+            {% block title %}  {% endblock %}
+        </title>
+
+    </head>
+
+    <body>
+
+        <header>
+            <h1 ><a class="heading-h1" href="/">Anime</a></h1>
+        </header>
+
+
+        {% block main %} {% endblock %}
+
+        {% if page == "result" %}
+        <footer></footer>
+
+        {% else %}
+        <footer>
+            <img src="../static/b895fee7e5289509f485fc4688fe483d.jpg" alt="anime image">
+        </footer>
+
+        {% endif %}
+
+
+    </body>
+</html>

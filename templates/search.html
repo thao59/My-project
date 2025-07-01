@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Result Page 
+{% endblock %}
+
+{% block main %}
+
+       
+        <div class="row">
+            {% for item in info %}
+            <div class="search-page">
+                <img class="anime-thumbnail" src="{{item['image']}}">
+                <div class="result">
+                    <div class="result-title"><a class="search-page-title" href="{{url_for('anime', id=item['_id'], title=item['title'])}}">{{item['title']}}</a></div>
+                    <div>{{item['type']}}: ({{item['episodes']}} eps)  </div>
+                    <div>Ranking: {{item['ranking']}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+         
+        
+    
+    
+
+{% endblock %}
+left

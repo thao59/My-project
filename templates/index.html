@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Main Page
+{% endblock %}
+
+{% block main %}
+
+<form class="search-box">
+    <input class="anime-name" autofocus="off" type="text" name="anime_name" placeholder="Anime title...">
+    <button class="search-button disabled" type="submit"> Search </button>
+</form>
+
+
+<script>
+    //load everything before running the function
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        //create a variable for submit button and input bar 
+        const submitButton = document.querySelector(".search-button");
+        console.log("found button:", submitButton);
+        const searchAnime = document.querySelector(".anime-name");
+        console.log("found input bar: ", searchAnime);
+
+        //by default, disable submit button
+        submitButton.disabled = true;
+
+        //submit button enables when there's input and length of input > 0
+        searchAnime.onkeyup = function()
+        {
+            if (searchAnime.value.length > 0)
+            {
+                submitButton.disabled = false; 
+                submitButton.classList.remove("disabled");
+            } 
+
+            else if (searchAnime.value.length <= 0)
+            {
+                submitButton.disabled = true;
+                submitButton.classList.add("disabled");
+            }
+        };
+
+    }
+);
+</script>
+
+{% endblock %}
+
