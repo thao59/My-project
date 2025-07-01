@@ -2,7 +2,7 @@ import requests
 
 
 def search(anime_name):
-    #ensure input has no space 
+    #case insensitivity 
     anime_title = anime_name.lower()
 
     #search anime name
